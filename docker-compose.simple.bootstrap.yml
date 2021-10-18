@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  bootstrap-simple:
+    build:
+      context: .
+      dockerfile: Dockerfile.bootstrap
+    env_file: .env
+    environment:
+      INIT_HOLDER_BALANCE: "500000000000000000000"
+      NUMS_OF_VALIDATOR: 1
+    volumes:
+      - ./storage:/root/storage
+      - ./scripts:/root/scripts
+      - ./config:/root/config
+      - ./init-holders:/root/init-holders
+    command: /root/scripts/bootstrap.sh
+    networks: 
+      - bootstrap-simple
+
+networks:
+  bootstrap-simple:
+    ipam:
+      driver: default
