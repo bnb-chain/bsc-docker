@@ -4,6 +4,8 @@ services:
   bsc-rpc: # This is the bootstrap node
     image: bsc-geth:docker-local
     env_file: .env
+    ports:
+      - 8545:8545
     environment:
       NODE_ID: bsc-rpc
     volumes:
@@ -22,7 +24,7 @@ services:
       - ./storage/bsc-validator1:/root/.ethereum
       - ./scripts:/scripts
     command: ash /scripts/bsc-validator.sh
-  
+
   netstats:
     build: ./netstats
     ports:
@@ -30,7 +32,7 @@ services:
     environment:
       WS_SECRET: bscpwd
     restart: always
-  
+
   truffle-test:
     build: ./truffle-test
     command: /scripts/truffle-test.sh
