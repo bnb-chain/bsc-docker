@@ -17,7 +17,7 @@ build-bsc:
 build-simple:
 	make build-bsc
 	$(OSFLAG) docker-compose -f docker-compose.simple.bootstrap.yml build
-	$(OSFLAG) docker-compose -f docker-compose.simple.yml build
+	$(OSFLAG) docker-compose -f docker-compose.simple.yml build --build-arg OS_ARCH=${UNAME}
 
 .PHONY:bootstrap-simple
 bootstrap-simple:
@@ -37,7 +37,7 @@ run-test-simple:
 build-cluster:
 	make build-bsc
 	$(OSFLAG) docker-compose -f docker-compose.cluster.bootstrap.yml build
-	$(OSFLAG) docker-compose -f docker-compose.cluster.yml build
+	$(OSFLAG) docker-compose -f docker-compose.cluster.yml build --build-arg OS_ARCH=${UNAME}
 
 .PHONY:bootstrap-cluster
 bootstrap-cluster:
