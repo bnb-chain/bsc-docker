@@ -4,7 +4,7 @@ ARG OS_ARCH
 
 RUN apk add --d --no-cache ca-certificates npm nodejs bash alpine-sdk git bash
 
-RUN git clone https://github.com/binance-chain/canonical-upgradeable-bep20.git /usr/app/canonical-upgradeable-bep20
+RUN git clone https://github.com/bnb-chain/canonical-upgradeable-bep20.git /usr/app/canonical-upgradeable-bep20
 
 WORKDIR /usr/app/canonical-upgradeable-bep20
 COPY truffle-config.js /usr/app/canonical-upgradeable-bep20
