@@ -59,6 +59,8 @@ Account 8: 0x7fd60C817837dCFEFCa6D0A52A44980d12F70C59, private key: 0x68ef711b39
 
 - Go to http://localhost:3000/ verify all nodes gradually connected to each other and block start counting.
 
+  The RPC endpoint and dashboard are published on the host loopback interface by default. If you intentionally expose either service on another interface, protect it with appropriate network access controls.
+
 - Run `make run-test-simple` to start bep20 truffle test.
 
 ## Three Validator Node Cluster
@@ -84,6 +86,8 @@ Account 8: 0x7fd60C817837dCFEFCa6D0A52A44980d12F70C59, private key: 0x68ef711b39
   ```
 
 - Go to http://localhost:3000/ verify all nodes gradually connected to each other and block start counting.
+
+  The RPC endpoint and dashboard are published on the host loopback interface by default. If you intentionally expose either service on another interface, protect it with appropriate network access controls.
 
 - Run `make run-test-cluster` to start bep20 truffle test.
 

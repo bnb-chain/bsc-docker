@@ -5,7 +5,7 @@ services:
     image: bsc-geth:docker-local
     env_file: .env
     ports:
-      - 8545:8545
+      - 127.0.0.1:8545:8545
     environment:
       NODE_ID: bsc-rpc
     volumes:
@@ -50,7 +50,7 @@ services:
   netstats:
     build: ./netstats
     ports:
-      - 3000:3000
+      - 127.0.0.1:3000:3000
     environment:
       WS_SECRET: bscpwd
     restart: always
